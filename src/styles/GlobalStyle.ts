@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-    background: #e5e5e5;
+    background: ${({ theme }) => theme.background};
     min-height: 100vh;
     box-sizing: border-box;
   }

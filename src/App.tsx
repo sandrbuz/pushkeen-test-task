@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import { useState } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
 import CardGrid from "./components/CardGrid";
 import GlobalStyle from "./styles/GlobalStyle";
 
@@ -87,15 +88,17 @@ function App() {
   };
 
   return (
-    <Wrapper>
-      <GlobalStyle />
-      <BgRect src="/bg-rect.svg" alt="bg" />
-      <CardGrid
-        cards={cardsData}
-        activeIndexes={activeIndexes}
-        onCardClick={handleCardClick}
-      />
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <GlobalStyle />
+        <BgRect src="/bg-rect.svg" alt="bg" />
+        <CardGrid
+          cards={cardsData}
+          activeIndexes={activeIndexes}
+          onCardClick={handleCardClick}
+        />
+      </Wrapper>
+    </ThemeProvider>
   );
 }
 

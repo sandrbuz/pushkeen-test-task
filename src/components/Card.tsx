@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import styled, { css } from "styled-components";
 
-interface CardProps {
+interface ICardProps {
   title: string;
   text: string;
   active: boolean;
@@ -10,7 +10,7 @@ interface CardProps {
 
 const CardWrapper = styled.div<{ active: boolean }>`
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 24px ${({ theme }) => theme.shadow};
   border-radius: 16px;
   padding: 16px 18px;
   transition: box-shadow 0.3s, background 0.3s;
@@ -20,9 +20,10 @@ const CardWrapper = styled.div<{ active: boolean }>`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  height: calc((100vh - 2 * 32px - 2 * 36px) / 3);
+  height: calc((100vh - 2 * 60px - 2 * 24px) / 3);
   min-height: unset;
   max-height: unset;
+  backdrop-filter: blur(15px);
 
   @media (max-width: 1100px) {
     height: 180px;
@@ -42,7 +43,7 @@ const CardWrapper = styled.div<{ active: boolean }>`
   ${(p) =>
     p.active &&
     css`
-      box-shadow: 0 4px 24px 0 rgba(255, 0, 0, 0.5);
+      box-shadow: 0 4px 24px 0 ${p.theme.red};
     `}
   &:hover {
     background: #fff;
@@ -59,7 +60,6 @@ const CardTitle = styled.h2`
 
 const CardText = styled.div`
   font-size: 0.95rem;
-  color: #222;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -67,7 +67,7 @@ const CardText = styled.div`
   -webkit-box-orient: vertical;
 `;
 
-const Card: React.FC<CardProps> = ({ title, text, active, onClick }) => (
+const Card: FC<ICardProps> = ({ title, text, active, onClick }) => (
   <CardWrapper active={active} onClick={onClick} tabIndex={0} role="button">
     <CardTitle title={title}>{title}</CardTitle>
     <CardText>{text}</CardText>
