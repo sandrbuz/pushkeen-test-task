@@ -3,14 +3,15 @@ import Card from "./Card";
 import { FC } from "react";
 
 interface ICardData {
+  id: string;
   title: string;
   text: string;
 }
 
 interface ICardGridProps {
   cards: ICardData[];
-  activeIndexes: number[];
-  onCardClick: (idx: number) => void;
+  activeIndexes: string[];
+  onCardClick: (id: string) => void;
 }
 
 const Grid = styled.div`
@@ -42,13 +43,13 @@ const CardGrid: FC<ICardGridProps> = ({
   onCardClick,
 }) => (
   <Grid>
-    {cards.map((card, idx) => (
+    {cards.map((card) => (
       <Card
-        key={idx}
+        key={card.id}
         title={card.title}
         text={card.text}
-        active={activeIndexes.includes(idx)}
-        onClick={() => onCardClick(idx)}
+        active={activeIndexes.includes(card.id)}
+        onClick={() => onCardClick(card.id)}
       />
     ))}
   </Grid>
