@@ -16,9 +16,9 @@ interface ICardGridProps {
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 48px;
   width: 100%;
-  padding: 60px 7vw 60px 7vw;
+  padding: 40px 5vw 40px 5vw;
   box-sizing: border-box;
 
   @media (max-width: 1100px) {

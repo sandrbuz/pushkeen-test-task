@@ -8,8 +8,12 @@ interface ICardProps {
   onClick: () => void;
 }
 
-const CardWrapper = styled.div<{ active: boolean }>`
-  background: rgba(255, 255, 255, 0.7);
+interface IStyledCardProps {
+  $active: boolean;
+}
+
+const CardWrapper = styled.div<IStyledCardProps>`
+  background: transparent;
   box-shadow: 0 4px 24px ${({ theme }) => theme.shadow};
   border-radius: 16px;
   padding: 16px 18px;
@@ -20,7 +24,7 @@ const CardWrapper = styled.div<{ active: boolean }>`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  height: calc((100vh - 2 * 60px - 2 * 24px) / 3);
+  height: calc((100vh - 2 * 40px - 3 * 48px) / 3);
   min-height: unset;
   max-height: unset;
   backdrop-filter: blur(15px);
@@ -41,7 +45,7 @@ const CardWrapper = styled.div<{ active: boolean }>`
     max-height: 180px;
   }
   ${(p) =>
-    p.active &&
+    p.$active &&
     css`
       box-shadow: 0 4px 24px 0 ${p.theme.red};
     `}
@@ -68,7 +72,7 @@ const CardText = styled.div`
 `;
 
 const Card: FC<ICardProps> = ({ title, text, active, onClick }) => (
-  <CardWrapper active={active} onClick={onClick} tabIndex={0} role="button">
+  <CardWrapper $active={active} onClick={onClick} tabIndex={0} role="button">
     <CardTitle title={title}>{title}</CardTitle>
     <CardText>{text}</CardText>
   </CardWrapper>
