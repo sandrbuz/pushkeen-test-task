@@ -24,7 +24,7 @@ const CardWrapper = styled.div<IStyledCardProps>`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  height: calc((100vh - 2 * 40px - 3 * 48px) / 3);
+  /* height: calc((100vh - 2 * 6vw - 3 * 48px) / 3); */
   min-height: unset;
   max-height: unset;
   backdrop-filter: blur(15px);
@@ -55,7 +55,7 @@ const CardWrapper = styled.div<IStyledCardProps>`
 `;
 
 const CardTitle = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   margin: 0 0 8px 0;
   white-space: nowrap;
   overflow: hidden;
