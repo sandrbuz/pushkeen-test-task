@@ -24,7 +24,6 @@ const CardWrapper = styled.div<IStyledCardProps>`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  /* height: calc((100vh - 2 * 6vw - 3 * 48px) / 3); */
   min-height: unset;
   max-height: unset;
   backdrop-filter: blur(15px);
@@ -41,8 +40,7 @@ const CardWrapper = styled.div<IStyledCardProps>`
   }
   @media (max-width: 600px) {
     height: 140px;
-    min-height: 100px;
-    max-height: 180px;
+    height: auto;
   }
   ${(p) =>
     p.$active &&
