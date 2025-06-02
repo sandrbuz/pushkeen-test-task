@@ -29,7 +29,12 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-  const [activeIndexes, setActiveIndexes] = useState<string[]>([]);
+  const [activeIndexes, setActiveIndexes] = useState<string[]>([
+    "card-3",
+    "card-6",
+    "card-10",
+    "card-12",
+  ]);
 
   const handleCardClick = (id: string) => {
     setActiveIndexes((prev) =>
