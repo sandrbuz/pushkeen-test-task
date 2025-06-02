@@ -26,16 +26,18 @@ const Grid = styled.div`
 
   @media (max-width: 1100px) {
     grid-template-columns: repeat(3, 1fr);
-    padding: 40px 5vw 40px 5vw;
+    gap: 20px;
+    padding: 30px 4vw;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 850px) {
     grid-template-columns: repeat(2, 1fr);
-    padding: 24px 3vw 24px 3vw;
+    gap: 20px;
+    padding: 30px 4vw;
   }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px 2vw 10px 2vw;
+    gap: 20px;
+    padding: 20px 4vw;
   }
 `;
 

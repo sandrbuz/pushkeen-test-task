@@ -29,18 +29,19 @@ const CardWrapper = styled.div<IStyledCardProps>`
   backdrop-filter: blur(15px);
 
   @media (max-width: 1100px) {
-    height: 180px;
-    min-height: 140px;
-    max-height: 220px;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
   }
-  @media (max-width: 800px) {
-    height: 160px;
-    min-height: 120px;
-    max-height: 200px;
+  @media (max-width: 850px) {
+    height: auto;
+    min-height: unset;
+    max-height: unset;
   }
   @media (max-width: 600px) {
-    height: 140px;
     height: auto;
+    min-height: unset;
+    max-height: unset;
   }
   ${(p) =>
     p.$active &&
@@ -53,7 +54,9 @@ const CardWrapper = styled.div<IStyledCardProps>`
 `;
 
 const CardTitle = styled.h2`
-  font-size: 1.4rem;
+  // font-size: 1.4rem;
+  font-size: 32px;
+  font-weight: 400;
   margin: 0 0 8px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -65,8 +68,16 @@ const CardText = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+  font-size: 12px;
+  // -webkit-line-clamp: 5;
+  // -webkit-box-orient: vertical;
+  @media (min-width: 1100px) {
+    // -webkit-line-clamp: 10;
+  }
+  @media (max-width: 1100px) {
+    // -webkit-line-clamp: 5;
+    // -webkit-box-orient: vertical;
+  }
 `;
 
 const Card: FC<ICardProps> = ({ title, text, active, onClick }) => (
