@@ -31,12 +31,9 @@ const Grid = styled.div`
   }
   @media (max-width: 850px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 30px 4vw;
   }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    gap: 20px;
     padding: 20px 4vw;
   }
 `;

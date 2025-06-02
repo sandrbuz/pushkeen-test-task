@@ -54,7 +54,6 @@ const CardWrapper = styled.div<IStyledCardProps>`
 `;
 
 const CardTitle = styled.h2`
-  // font-size: 1.4rem;
   font-size: 32px;
   font-weight: 400;
   margin: 0 0 8px 0;
@@ -69,15 +68,6 @@ const CardText = styled.div`
   text-overflow: ellipsis;
   display: -webkit-box;
   font-size: 12px;
-  // -webkit-line-clamp: 5;
-  // -webkit-box-orient: vertical;
-  @media (min-width: 1100px) {
-    // -webkit-line-clamp: 10;
-  }
-  @media (max-width: 1100px) {
-    // -webkit-line-clamp: 5;
-    // -webkit-box-orient: vertical;
-  }
 `;
 
 const Card: FC<ICardProps> = ({ title, text, active, onClick }) => (
