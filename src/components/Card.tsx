@@ -49,6 +49,19 @@ const CardWrapper = styled.div<IStyledCardProps>`
   &:hover {
     background: #fff;
   }
+  @media (hover: hover) {
+    &:hover {
+      background: #fff;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      background: #fff;
+    }
+    &:not(:active) {
+      background: transparent;
+    }
+  }
 `;
 
 const CardTitle = styled.h2`
