@@ -24,8 +24,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   overflow-x: hidden;
+  @media (min-width: 1600px) {
+    padding: 3vh 6vw;
+  }
 `;
 
 function App() {
