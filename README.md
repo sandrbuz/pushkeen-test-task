@@ -1,5 +1,9 @@
 # Pushkeen test task
 
+## 🌐 Live Demo
+
+**[Try it online →](https://pushkeen-test-task.netlify.app/)**
+
 ### Usage
 
 Install all dependencies:
